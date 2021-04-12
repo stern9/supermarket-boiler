@@ -134,3 +134,13 @@ form {
   opacity: 0.5;
   cursor: default;
 }
+
+#re-render {
+  position: absolute;
+  top: 20;
+  right: 20;
+  z-index: 1000;
+}
+#map {
+  height: 100%;
+}

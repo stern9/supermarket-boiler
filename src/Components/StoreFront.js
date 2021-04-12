@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ProductsList from "./ProductsList";
 import AddProductForm from "./AddProductForm";
+import Location from "./Location";
 
 export default function StoreFront() {
   const [products, setProducts] = useState([]);
@@ -56,6 +57,7 @@ export default function StoreFront() {
       />
       <div>{products.length === 0 && <p>Add your first product</p>}</div>
       <ProductsList products={products} onDeleteClick={handleDeleteClick} />
+      <Location />
     </>
   );
 }
