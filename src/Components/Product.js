@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 export default function Product(props) {
   const [count, setCount] = useState(0);
-
   const { details } = props;
 
   function handleIncrementClick() {
@@ -14,12 +13,11 @@ export default function Product(props) {
     }
   }
 
-  if (!details) {
-    return null;
-  }
+  console.log(details);
 
   return (
     <div className="product">
+      <img src={details.image} width="50" alt="" />
       <div className="product-info">
         <h2>{details.name}</h2>
         <p>{details.description}</p>
