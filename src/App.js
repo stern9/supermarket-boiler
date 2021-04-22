@@ -1,28 +1,17 @@
-import { useState } from "react";
-import StoreFront from "./Components/StoreFront";
+import React, { useContext } from "react";
+import StoreFront from "./Components/StoreFront.js";
+import Navbar from "./Components/Navbar.js";
+import { AppContext } from "./Components/AppContext.js";
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const app = useContext(AppContext);
 
-  if (loggedIn) {
-    return (
-      <>
-        <StoreFront />
-        <button className="btn btn-outline" onClick={() => setLoggedIn(false)}>
-          Logout
-        </button>
-      </>
-    );
-  } else {
-    return (
-      <>
-        <h2>Please login</h2>
-        <button className="btn btn-primary" onClick={() => setLoggedIn(true)}>
-          Login
-        </button>
-      </>
-    );
-  }
+  return (
+    <div className={app.theme === "dark" ? "dark" : ""}>
+      <Navbar />
+      <StoreFront />
+    </div>
+  );
 }
 
 export default App;
